@@ -11,11 +11,15 @@ var game =
   scoreP2: 0,
   scoreCPU: 0,
   scoreNul: 0,
+  symbol: ['O', 'X'],
 
   // Début de la partie
   init: function()
   {
     // Initialisation
+    if(Math.floor(Math.random() * 2))
+    this.symbol.reverse();
+
     this.crossOrCircle = true;
     this.loop = 0;
     document.getElementsByTagName('table')[0].onclick = function(e) { game.pushCrossOrCircle(e); };
@@ -52,7 +56,7 @@ var game =
       if (!this.crossOrCircle)
       {
         // Insertion du symbôle
-        target.innerHTML = 'O';
+        target.innerHTML = this.symbol[0];
         target.style.color = 'green';
 
         // Alternance
@@ -68,7 +72,7 @@ var game =
       else
       {
         // Insertion du symbôle
-        target.innerHTML = 'X';
+        target.innerHTML = this.symbol[1];
         target.style.color = 'red';
 
         // Alternance

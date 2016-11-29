@@ -22,7 +22,7 @@
         </li>
       </ul>
     </div>
-    <div id="game">
+    <div>
       <h2></h2>
       <table>
         <tr>
